@@ -1,10 +1,17 @@
 {
-  "description": "Showcasing Mishkat Restaurant's exquisite Indian and Mughlai cuisine, this elegant website offers a cinematic dining experience with easy reservations and a visually rich menu.",
+  "title": "Terrace by Makkawao | Rooftop Dining in Trivandrum",
+  "description": "Discover Terrace by Makkawao, a rooftop dining destination in Trivandrum offering a memorable food and dining experience.",
+  "openGraph": {
+    "image": "https://terracemakkawao.vercel.app/images/terrace-night.jpg"
+  },
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
     "addBypassLinks": false,
     "ignoreReducedMotion": false
+  },
+  "icons": {
+    "icon": "/images/terrace-night.jpg"
   }
 }
