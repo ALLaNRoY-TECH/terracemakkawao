@@ -102,6 +102,8 @@ export default function App() {
   const [fullMenuOpen, setFullMenuOpen] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [storyVideoMuted, setStoryVideoMuted] = useState(true);
+  const [activeReel, setActiveReel] = useState<string | null>(null);
+  const [mutedReels, setMutedReels] = useState<boolean[]>([true, true, true, true]);
   const dishRail = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -358,8 +360,33 @@ export default function App() {
               "/videos/reel-3.mp4",
               "/videos/reel-4.mp4",
             ].map((videoSrc, index) => (
-              <div key={index} className="group relative aspect-[9/16] overflow-hidden rounded-xl bg-navy/50">
-                <video src={videoSrc} autoPlay loop muted playsInline className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-100" />
+              <div 
+                key={index} 
+                className="group relative aspect-[9/16] overflow-hidden rounded-xl bg-navy/50 cursor-pointer"
+                onClick={() => setActiveReel(videoSrc)}
+              >
+                <video src={videoSrc} autoPlay loop muted={mutedReels[index]} playsInline className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-100" />
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition group-hover:bg-brass/90 opacity-0 group-hover:opacity-100">
+                    <svg className="ml-1 h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                </div>
+                <button 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const newMuted = [...mutedReels];
+                    newMuted[index] = !newMuted[index];
+                    setMutedReels(newMuted);
+                  }}
+                  className="absolute bottom-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md transition hover:bg-black/60 opacity-0 group-hover:opacity-100"
+                  aria-label={mutedReels[index] ? "Unmute reel" : "Mute reel"}
+                >
+                  {mutedReels[index] ? (
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clipRule="evenodd" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>
+                  ) : (
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
+                  )}
+                </button>
               </div>
             ))}
           </div>
@@ -563,6 +590,30 @@ export default function App() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      )}
+      
+      {/* Reel Modal */}
+      {activeReel && (
+        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 p-4 animate-in fade-in duration-300" onClick={() => setActiveReel(null)}>
+          <button 
+            className="absolute right-6 top-6 z-10 text-white/70 hover:text-white"
+            onClick={() => setActiveReel(null)}
+          >
+            <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div className="relative h-[85vh] max-h-[800px] w-full max-w-[450px] overflow-hidden rounded-xl bg-black shadow-2xl shadow-black/50" onClick={(e) => e.stopPropagation()}>
+            <video 
+              src={activeReel} 
+              autoPlay 
+              loop 
+              controls
+              playsInline 
+              className="h-full w-full object-contain" 
+            />
           </div>
         </div>
       )}
