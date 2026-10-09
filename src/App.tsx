@@ -352,15 +352,14 @@ export default function App() {
             <p className="max-w-xs text-sm leading-6 text-white/55">Experience the rooftop energy, culinary craft, and stunning exterior views from above.</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {/* Thumbnails for reels */}
-            {[images.sign, images.foodView || "/images/food-view.jpg", images.steak || "/images/steak.jpg", images.bbqFries || "/images/bbq-fries.jpg"].map((item, index) => (
+            {[
+              "/videos/reel-1.mp4",
+              "/videos/reel-2.mp4",
+              "/videos/reel-3.mp4",
+              "/videos/reel-4.mp4",
+            ].map((videoSrc, index) => (
               <div key={index} className="group relative aspect-[9/16] overflow-hidden rounded-xl bg-navy/50">
-                <img src={item} alt={`Reel thumbnail ${index + 1}`} className="h-full w-full object-cover transition duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition group-hover:bg-brass/90">
-                    <svg className="ml-1 h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-                  </div>
-                </div>
+                <video src={videoSrc} autoPlay loop muted playsInline className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-100" />
               </div>
             ))}
           </div>
