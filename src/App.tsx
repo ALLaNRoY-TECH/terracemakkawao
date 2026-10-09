@@ -38,6 +38,36 @@ const signatureDishes = [
     image: "/images/food_new_4.png",
     number: "",
   },
+  {
+    name: "Tandoori Platter",
+    detail: "",
+    image: "/images/food_new_5.jpg",
+    number: "",
+  },
+  {
+    name: "Spicy Wings",
+    detail: "",
+    image: "/images/food_new_6.jpg",
+    number: "",
+  },
+  {
+    name: "Steak and Fries",
+    detail: "",
+    image: "/images/food_new_7.jpg",
+    number: "",
+  },
+  {
+    name: "Signature Sizzler",
+    detail: "",
+    image: "/images/food_new_8.jpg",
+    number: "",
+  },
+  {
+    name: "Rooftop View Dish",
+    detail: "",
+    image: "/images/food_new_9.png",
+    number: "",
+  },
 ];
 
 // menuGroups replaced by fullMenu from menuData.ts
