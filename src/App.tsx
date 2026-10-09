@@ -16,57 +16,57 @@ const images = {
 const signatureDishes = [
   {
     name: "Classic Steak",
-    detail: "",
+    detail: "Tender and juicy grilled steak with classic sides",
     image: "/images/food_new_1.png",
-    number: "",
+    number: "01",
   },
   {
     name: "Tandoori Special",
-    detail: "",
+    detail: "Authentic charcoal grilled tandoori platter",
     image: "/images/food_new_2.png",
-    number: "",
+    number: "02",
   },
   {
     name: "Pepper Steak",
-    detail: "",
+    detail: "Succulent steak with a rich pepper sauce",
     image: "/images/food_new_3.jpg",
-    number: "",
+    number: "03",
   },
   {
     name: "Creamy Pasta",
-    detail: "",
+    detail: "Rich and creamy penne pasta with veggies",
     image: "/images/food_new_4.png",
-    number: "",
+    number: "04",
   },
   {
     name: "Tandoori Platter",
-    detail: "",
+    detail: "A feast of grilled meats with soft pita",
     image: "/images/food_new_5.jpg",
-    number: "",
+    number: "05",
   },
   {
     name: "Spicy Wings",
-    detail: "",
+    detail: "Crispy and spicy chicken wings tossed in sauce",
     image: "/images/food_new_6.jpg",
-    number: "",
+    number: "06",
   },
   {
     name: "Steak and Fries",
-    detail: "",
+    detail: "Grilled steak served with crispy golden fries",
     image: "/images/food_new_7.jpg",
-    number: "",
+    number: "07",
   },
   {
     name: "Signature Sizzler",
-    detail: "",
+    detail: "Sizzling platter with our house special sauce",
     image: "/images/food_new_8.jpg",
-    number: "",
+    number: "08",
   },
   {
     name: "Rooftop View Dish",
-    detail: "",
+    detail: "Enjoy our specials with the best view in town",
     image: "/images/food_new_9.png",
-    number: "",
+    number: "09",
   },
 ];
 
@@ -257,8 +257,8 @@ export default function App() {
         <div className="overflow-hidden py-4 w-full">
           <div className="signature-marquee flex gap-5 w-max">
             {[...signatureDishes, ...signatureDishes].map((dish, index) => (
-              <article className="group relative min-w-[84vw] md:min-w-[56vw] lg:min-w-[43vw] overflow-hidden rounded-md" key={`${dish.name}-${index}`}>
-                <div className="aspect-[5/4] overflow-hidden">
+              <article className="group relative min-w-[85vw] md:min-w-[45vw] lg:min-w-[33vw] overflow-hidden rounded-md" key={`${dish.name}-${index}`}>
+                <div className="aspect-[16/9] overflow-hidden relative">
                   <img 
                     className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.035]" 
                     src={dish.image} 
@@ -267,6 +267,19 @@ export default function App() {
                       (e.target as HTMLImageElement).src = `https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop&sig=${index}`;
                     }}
                   />
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent pointer-events-none" />
+                  
+                  {/* Number Badge (Top Left) */}
+                  <div className="absolute top-4 left-4 text-xs font-semibold text-white/90">
+                    O{dish.number.replace("0", "")}
+                  </div>
+
+                  {/* Text (Bottom Left) */}
+                  <div className="absolute bottom-6 left-6 pr-6">
+                    <h3 className="font-display text-3xl text-white md:text-4xl">{dish.name}</h3>
+                    <p className="mt-1 text-sm text-white/70">{dish.detail}</p>
+                  </div>
                 </div>
               </article>
             ))}
