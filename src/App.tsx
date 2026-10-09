@@ -438,7 +438,8 @@ export default function App() {
               Intimate dinners, family gatherings, or a celebration worth remembering. Let us set the table at the rooftop.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <a className="button button-light" href="https://www.instagram.com/terrace.makkawao/" target="_blank" rel="noreferrer">DM to Reserve</a>
+              <a className="button button-light" href="https://www.google.com/maps/reserve/v/dine/c/o8ZSmcQXK9Y?source=pa&opi=89978449&hl=en-IN&gei=LeDIase0BamVhvcPnLXlWA&sourceurl=https://www.google.com/search?q%3DTerrace%2BBy%2BMakkawao%26oq%3DTerrace%2BBy%2BMakkawao%26gs_lcrp%3DEgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7Mg0IARAAGJECGIAEGIoFMgYIAhBFGDsyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyDQgGEC4YrwEYxwEYgAQyBggHEEUYPdIBBzY2M2owajSoAgCwAgE%26sourceid%3Dchrome%26source%3Dchrome.ob%26ie%3DUTF-8" target="_blank" rel="noreferrer">Book a Table</a>
+              <a className="button button-outline" href="https://www.instagram.com/terrace.makkawao/" target="_blank" rel="noreferrer">DM to Reserve</a>
               <a className="button button-outline" href="tel:+917559006605">Call +91 75590 06605</a>
             </div>
           </div>
