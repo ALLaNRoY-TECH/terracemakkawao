@@ -1,0 +1,10 @@
+{
+  "description": "Showcasing Mishkat Restaurant's exquisite Indian and Mughlai cuisine, this elegant website offers a cinematic dining experience with easy reservations and a visually rich menu.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
