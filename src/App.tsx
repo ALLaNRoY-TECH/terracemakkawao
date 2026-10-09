@@ -15,40 +15,28 @@ const images = {
 
 const signatureDishes = [
   {
-    name: "Crispy Fried Steak",
-    detail: "Golden crispy steak served with creamy white sauce and fries",
-    image: "/images/highres_1.jpg",
-    number: "01",
+    name: "Classic Steak",
+    detail: "",
+    image: "/images/food_new_1.png",
+    number: "",
   },
   {
-    name: "Tandoori Chicken Platter",
-    detail: "Authentic tandoori chicken served with soft pita bread",
-    image: "/images/highres_2.jpg",
-    number: "02",
+    name: "Tandoori Special",
+    detail: "",
+    image: "/images/food_new_2.png",
+    number: "",
   },
   {
-    name: "Grilled Chicken Breast",
-    detail: "Juicy grilled chicken breast topped with our signature red sauce",
-    image: "/images/highres_3.jpg",
-    number: "03",
+    name: "Pepper Steak",
+    detail: "",
+    image: "/images/food_new_3.jpg",
+    number: "",
   },
   {
-    name: "Special BBQ Platter",
-    detail: "Tender BBQ steak topped with rich gravy and roasted veggies",
-    image: "/images/highres_4.jpg",
-    number: "04",
-  },
-  {
-    name: "Classic Smash Burger",
-    detail: "Our signature double patty smash burger with house special sauce",
-    image: "/images/highres_5.jpg",
-    number: "05",
-  },
-  {
-    name: "Rooftop Special Pasta",
-    detail: "Creamy alfredo pasta tossed with mushrooms and parmesan",
-    image: "/images/highres_6.jpg",
-    number: "06",
+    name: "Creamy Pasta",
+    detail: "",
+    image: "/images/food_new_4.png",
+    number: "",
   },
 ];
 
